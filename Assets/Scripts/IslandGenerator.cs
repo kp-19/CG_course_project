@@ -11,9 +11,13 @@ public class IslandGenerator : MonoBehaviour
 
     public DrawMode drawMode;
     
-    public int islandWidth;
-	public int islandHeight;
+	const int islandChunkSize = 241;
+    [Range(0,6)]
+	public int levelOfDetail;
 	public float noiseScale;
+
+	public float heightMultiplier;
+	public AnimationCurve heightCurve;
 
 	public int octaves;
 	[Range(0,1)]
@@ -28,15 +32,15 @@ public class IslandGenerator : MonoBehaviour
     public TerrainType[] regions;
 
 	public void GenerateIsland() {
-		float[,] noiseMap = Noise.GenerateNoiseMap (islandWidth, islandHeight, seed, noiseScale, octaves, persistance, lacunarity, offset);
+		float[,] noiseMap = Noise.GenerateNoiseMap (islandChunkSize, islandChunkSize, seed, noiseScale, octaves, persistance, lacunarity, offset);
         
-        Color[] colourMap = new Color[islandWidth * islandHeight];
-		for (int y = 0; y < islandHeight; y++) {
-			for (int x = 0; x < islandWidth; x++) {
+        Color[] colourMap = new Color[islandChunkSize * islandChunkSize];
+		for (int y = 0; y < islandChunkSize; y++) {
+			for (int x = 0; x < islandChunkSize; x++) {
 				float currentHeight = noiseMap [x, y];
 				for (int i = 0; i < regions.Length; i++) {
 					if (currentHeight <= regions [i].height) {
-						colourMap [y * islandWidth + x] = regions [i].colour;
+						colourMap [y * islandChunkSize + x] = regions [i].colour;
 						break;
 					}
 				}
@@ -47,19 +51,14 @@ public class IslandGenerator : MonoBehaviour
 		if (drawMode == DrawMode.NoiseMap) {
 			display.DrawTexture (TextureGenerator.TextureFromHeightMap(noiseMap));
 		} else if (drawMode == DrawMode.ColourMap) {
-			display.DrawTexture (TextureGenerator.TextureFromColourMap(colourMap, islandWidth, islandHeight));
+			display.DrawTexture (TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize));
 		} else if (drawMode == DrawMode.Mesh) {
-			display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap), TextureGenerator.TextureFromColourMap(colourMap, islandWidth, islandHeight));
+			display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap, heightMultiplier, heightCurve, levelOfDetail), TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize));
 		} 
 	}
 
 	void OnValidate() {
-		if (islandWidth < 1) {
-			islandWidth = 1;
-		}
-		if (islandHeight < 1) {
-			islandHeight = 1;
-		}
+		
 		if (lacunarity < 1) {
 			lacunarity = 1;
 		}

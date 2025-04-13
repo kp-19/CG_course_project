@@ -113,7 +113,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _WaveHeight: 500
+    - _WaveHeight: 30
     - _WaveSpeed: 0.5
     - _WaveSpeedA: 0.3
     - _WaveSpeedB: 0.01

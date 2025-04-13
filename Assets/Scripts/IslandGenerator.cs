@@ -8,7 +8,7 @@ public class IslandGenerator : MonoBehaviour
 
 	public bool autoUpdate;
 
-	public void GenerateMap() {
+	public void GenerateIsland() {
 		float[,] noiseMap = Noise.GenerateNoiseMap (islandWidth, islandHeight, noiseScale);
 
 

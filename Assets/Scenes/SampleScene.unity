@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1386fba0fd4bf02408a1b3dcd0710992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textureRender: {fileID: 0}
+  textureRender: {fileID: 645798860}
 --- !u!114 &356259606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,9 +299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308df14bb30c1f74d83c4d2475eb0f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  islandWidth: 0
-  islandHeight: 0
-  noiseScale: 0
+  islandWidth: 10
+  islandHeight: 10
+  noiseScale: 0.3
   autoUpdate: 0
 --- !u!4 &356259607
 Transform:

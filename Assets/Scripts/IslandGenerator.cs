@@ -48,7 +48,9 @@ public class IslandGenerator : MonoBehaviour
 			display.DrawTexture (TextureGenerator.TextureFromHeightMap(noiseMap));
 		} else if (drawMode == DrawMode.ColourMap) {
 			display.DrawTexture (TextureGenerator.TextureFromColourMap(colourMap, islandWidth, islandHeight));
-		}
+		} else if (drawMode == DrawMode.Mesh) {
+			display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap), TextureGenerator.TextureFromColourMap(colourMap, islandWidth, islandHeight));
+		} 
 	}
 
 	void OnValidate() {

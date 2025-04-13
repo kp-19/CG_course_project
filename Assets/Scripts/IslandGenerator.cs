@@ -19,6 +19,9 @@ public class IslandGenerator : MonoBehaviour
 	public float heightMultiplier;
 	public AnimationCurve heightCurve;
 
+	public bool useFalloff;
+	float[,] falloffMap;
+
 	public int octaves;
 	[Range(0,1)]
 	public float persistance;
@@ -31,12 +34,20 @@ public class IslandGenerator : MonoBehaviour
 
     public TerrainType[] regions;
 
+	void Awake() {
+		falloffMap = FalloffGenerator.GenerateFalloffMap(islandChunkSize);
+		GenerateIsland();
+	}
+
 	public void GenerateIsland() {
 		float[,] noiseMap = Noise.GenerateNoiseMap (islandChunkSize, islandChunkSize, seed, noiseScale, octaves, persistance, lacunarity, offset);
         
         Color[] colourMap = new Color[islandChunkSize * islandChunkSize];
 		for (int y = 0; y < islandChunkSize; y++) {
 			for (int x = 0; x < islandChunkSize; x++) {
+				if (useFalloff) {
+					noiseMap[x, y] = Mathf.Clamp01(noiseMap[x, y] - falloffMap[x, y]);
+				}
 				float currentHeight = noiseMap [x, y];
 				for (int i = 0; i < regions.Length; i++) {
 					if (currentHeight <= regions [i].height) {
@@ -54,7 +65,9 @@ public class IslandGenerator : MonoBehaviour
 			display.DrawTexture (TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize));
 		} else if (drawMode == DrawMode.Mesh) {
 			display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap, heightMultiplier, heightCurve, levelOfDetail), TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize));
-		} 
+		} else if (drawMode == DrawMode.FalloffMap) {
+			display.DrawTexture(TextureGenerator.TextureFromHeightMap(FalloffGenerator.GenerateFalloffMap(islandChunkSize)));
+		}
 	}
 
 	void OnValidate() {
@@ -64,6 +77,10 @@ public class IslandGenerator : MonoBehaviour
 		}
 		if (octaves < 0) {
 			octaves = 0;
+		}
+
+		if (useFalloff) {
+			falloffMap = FalloffGenerator.GenerateFalloffMap(islandChunkSize);
 		}
 	}
 }

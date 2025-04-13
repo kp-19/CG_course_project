@@ -60,13 +60,13 @@ public class IslandGenerator : MonoBehaviour
 
 		IslandDisplay display = FindAnyObjectByType<IslandDisplay> ();
 		if (drawMode == DrawMode.NoiseMap) {
-			display.DrawTexture (TextureGenerator.TextureFromHeightMap(noiseMap));
+			//display.DrawTexture (TextureGenerator.TextureFromHeightMap(noiseMap));
 		} else if (drawMode == DrawMode.ColourMap) {
-			display.DrawTexture (TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize));
+			//display.DrawTexture (TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize));
 		} else if (drawMode == DrawMode.Mesh) {
 			display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap, heightMultiplier, heightCurve, levelOfDetail), TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize));
 		} else if (drawMode == DrawMode.FalloffMap) {
-			display.DrawTexture(TextureGenerator.TextureFromHeightMap(FalloffGenerator.GenerateFalloffMap(islandChunkSize)));
+			//display.DrawTexture(TextureGenerator.TextureFromHeightMap(FalloffGenerator.GenerateFalloffMap(islandChunkSize)));
 		}
 	}
 

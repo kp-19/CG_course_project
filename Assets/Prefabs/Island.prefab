@@ -142,6 +142,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2816105261059605578}
+  - {fileID: 2372501176359832993}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1187964297143988602
@@ -269,6 +270,7 @@ MonoBehaviour:
   meshCollider: {fileID: 5037807898292444840}
   resourceSpawners:
   - {fileID: 4369697460036374227}
+  - {fileID: 3152006009694818807}
 --- !u!114 &4369697460036374227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,3 +301,63 @@ MonoBehaviour:
     m_Bits: 1
   minNoiseHeight: 0.4
   maxNoiseHeight: 0.48
+--- !u!1 &6098203358193319217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2372501176359832993}
+  - component: {fileID: 3152006009694818807}
+  m_Layer: 0
+  m_Name: TreasureSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2372501176359832993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098203358193319217}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 860424369763543900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3152006009694818807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098203358193319217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb2e1e2cc9644249b95d0d20198cb36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourcePrefabArray: []
+  spawnChance: 10
+  islandGenerator: {fileID: 1187964297143988602}
+  meshScale: 10
+  meshOffsetX: 0
+  meshOffsetZ: 0
+  meshOffsetY: 0
+  distanceBetweenCheck: 5
+  heightOfCheck: 100
+  rangeOfCheck: 200
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  treasureChestPrefab: {fileID: 5283313697113663848, guid: 383c7e385eb6f2f4bac2ef32ea259337, type: 3}
+  minChests: 2
+  maxChests: 4

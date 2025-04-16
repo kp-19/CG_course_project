@@ -12,14 +12,14 @@ public class SandTreeSpawner : ResourceSpawner
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log(gameObject.name + ": SandTreeSpawner Start - Using noise height range: " + minNoiseHeight + " to " + maxNoiseHeight);
+        //Debug.Log(gameObject.name + ": SandTreeSpawner Start - Using noise height range: " + minNoiseHeight + " to " + maxNoiseHeight);
         
         // Get the heightMultiplier and heightCurve from the IslandGenerator
         if (islandGenerator != null)
         {
             heightMultiplier = islandGenerator.heightMultiplier;
             heightCurve = islandGenerator.heightCurve;
-            Debug.Log(gameObject.name + ": Using heightMultiplier: " + heightMultiplier + " and mesh scale: " + meshScale);
+            //Debug.Log(gameObject.name + ": Using heightMultiplier: " + heightMultiplier + " and mesh scale: " + meshScale);
         }
         
         base.Start();
@@ -68,14 +68,7 @@ public class SandTreeSpawner : ResourceSpawner
         
         bool shouldSpawn = approximateNoiseHeight >= minNoiseHeight && approximateNoiseHeight <= maxNoiseHeight;
         
-        // Log only occasionally to avoid spam
-        if (Random.Range(0, 100) < 5)
-        {
-            Debug.Log(gameObject.name + ": Mesh height: " + meshHeight + 
-                      " → Unscaled: " + (meshHeight / meshScale) +
-                      " → Approx noise height: " + approximateNoiseHeight +
-                      " → In range [" + minNoiseHeight + "-" + maxNoiseHeight + "]: " + shouldSpawn);
-        }
+       
         
         return shouldSpawn;
     }

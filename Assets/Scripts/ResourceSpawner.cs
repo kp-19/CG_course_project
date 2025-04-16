@@ -23,7 +23,7 @@ public class ResourceSpawner : MonoBehaviour
     // This method will be called by IslandDisplay after mesh generation
     public virtual void SetupAndSpawnResources(MeshData meshData)
     {
-        Debug.Log(gameObject.name + ": SetupAndSpawnResources called with " + meshData.vertices.Length + " vertices");
+        //Debug.Log(gameObject.name + ": SetupAndSpawnResources called with " + meshData.vertices.Length + " vertices");
         DeleteResources();
         
         // Calculate bounds based on vertices
@@ -72,7 +72,7 @@ public class ResourceSpawner : MonoBehaviour
             }
         }
         
-        Debug.Log(gameObject.name + ": Spawned " + resourcesSpawned + " resources");
+        //Debug.Log(gameObject.name + ": Spawned " + resourcesSpawned + " resources");
     }
     
     // Override this in child classes to filter by height
@@ -124,11 +124,11 @@ public class ResourceSpawner : MonoBehaviour
         }
     }
 
-    void DeleteResources()
+    protected void DeleteResources()
     {
         foreach(Transform child in transform)
         {
-            if (child.gameObject.name != "Mesh")
+            if (child.gameObject.name != "Mesh" && child.gameObject.name != "TreasureSpawner")
             {
                 Destroy(child.gameObject);
             }

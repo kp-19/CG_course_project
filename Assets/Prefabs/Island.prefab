@@ -163,40 +163,58 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      time: 0.0024681091
+      value: -0.09542847
+      inSlope: 0.12467807
+      outSlope: 0.12467807
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.40200678
-      value: -0.0022834986
-      inSlope: 0.053367414
-      outSlope: 0.053367414
+      time: 0.30342108
+      value: -0.057906233
+      inSlope: 1.3211827
+      outSlope: 1.3211827
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.16015391
+      outWeight: 0.14565673
     - serializedVersion: 3
-      time: 0.8733758
-      value: 0.8090423
-      inSlope: 5.2402225
-      outSlope: 5.2402225
+      time: 0.43104526
+      value: 0.059789237
+      inSlope: 0.7246597
+      outSlope: 0.7246597
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.14006248
+      outWeight: 0.2180512
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
+      time: 0.662468
+      value: 0.35429376
+      inSlope: 4.1525016
+      outSlope: 4.1525016
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.078345925
+    - serializedVersion: 3
+      time: 0.8829049
+      value: 0.9678882
+      inSlope: 1.9061255
+      outSlope: 1.9061255
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.46233246
+    - serializedVersion: 3
+      time: 0.991333
+      value: 1.0662651
+      inSlope: 0.9073009
+      outSlope: 0.9073009
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -206,7 +224,7 @@ MonoBehaviour:
   persistance: 0.5
   lacunarity: 2
   seed: 0
-  offset: {x: 0.8, y: 0}
+  offset: {x: 0.62, y: 0}
   autoUpdate: 0
   regions:
   - name: Water Deep
@@ -225,10 +243,10 @@ MonoBehaviour:
     height: 0.65
     colour: {r: 0.121730104, g: 0.4641509, b: 0.12941238, a: 0}
   - name: Rock 1
-    height: 0.85
-    colour: {r: 0.1961647, g: 0.07949448, b: 0.20754719, a: 0}
+    height: 0.8
+    colour: {r: 0.26994807, g: 0.23357956, b: 0.2735849, a: 0}
   - name: Rock 2
-    height: 0.95
+    height: 0.9
     colour: {r: 0.12820157, g: 0.08946246, b: 0.13207549, a: 0}
   - name: Snow
     height: 1
@@ -247,3 +265,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshFilter: {fileID: 7338718753298260347}
   meshRenderer: {fileID: 7909726539786753223}
+  meshCollider: {fileID: 5037807898292444840}

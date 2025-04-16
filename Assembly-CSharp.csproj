@@ -66,7 +66,9 @@
     <Compile Include="Assets\Scripts\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\MountingMechanics.cs" />
     <Compile Include="Assets\Scripts\ShipController.cs" />
+    <Compile Include="Assets\Scripts\SandTreeSpawner.cs" />
     <Compile Include="Assets\Imports\StarterAssets\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
+    <Compile Include="Assets\Scripts\CameraSwitcher.cs" />
     <Compile Include="Assets\Scripts\IslandGenerator.cs" />
     <Compile Include="Assets\Scripts\Noise.cs" />
     <Compile Include="Assets\Imports\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
@@ -81,10 +83,12 @@
     <Compile Include="Assets\Scripts\IslandDisplay.cs" />
     <Compile Include="Assets\Imports\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\Scripts\MeshRenderer.cs" />
+    <Compile Include="Assets\Scripts\ResourceSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imports\Axe Warrior\ReadMe.txt" />
     <None Include="Assets\Imports\StarterAssets\license.txt" />
+    <None Include="Assets\Imports\LowPolyTreePack\README.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

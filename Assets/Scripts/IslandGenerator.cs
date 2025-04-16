@@ -35,11 +35,13 @@ public class IslandGenerator : MonoBehaviour
     public TerrainType[] regions;
 
 	void Awake() {
+		Debug.Log("IslandGenerator Awake - Generating falloff map");
 		falloffMap = FalloffGenerator.GenerateFalloffMap(islandChunkSize);
 		GenerateIsland();
 	}
 
 	public void GenerateIsland() {
+		Debug.Log("GenerateIsland called - Creating noise map of size " + islandChunkSize);
 		float[,] noiseMap = Noise.GenerateNoiseMap (islandChunkSize, islandChunkSize, seed, noiseScale, octaves, persistance, lacunarity, offset);
         
         Color[] colourMap = new Color[islandChunkSize * islandChunkSize];
@@ -59,14 +61,27 @@ public class IslandGenerator : MonoBehaviour
 		}
 
 		IslandDisplay display = FindAnyObjectByType<IslandDisplay> ();
+		if (display == null) {
+			Debug.LogError("No IslandDisplay found in the scene!");
+			return;
+		}
+		
+		Debug.Log("Drawing mesh with " + drawMode + " mode");
 		if (drawMode == DrawMode.NoiseMap) {
 			//display.DrawTexture (TextureGenerator.TextureFromHeightMap(noiseMap));
+			Debug.LogWarning("NoiseMap mode is commented out");
 		} else if (drawMode == DrawMode.ColourMap) {
 			//display.DrawTexture (TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize));
+			Debug.LogWarning("ColourMap mode is commented out");
 		} else if (drawMode == DrawMode.Mesh) {
-			display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap, heightMultiplier, heightCurve, levelOfDetail), TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize));
+			Debug.Log("Generating terrain mesh and texture for mesh display");
+			MeshData meshData = MeshGenerator.GenerateTerrainMesh(noiseMap, heightMultiplier, heightCurve, levelOfDetail);
+			Texture2D texture = TextureGenerator.TextureFromColourMap(colourMap, islandChunkSize, islandChunkSize);
+			display.DrawMesh(meshData, texture);
+			Debug.Log("Mesh drawing completed successfully");
 		} else if (drawMode == DrawMode.FalloffMap) {
 			//display.DrawTexture(TextureGenerator.TextureFromHeightMap(FalloffGenerator.GenerateFalloffMap(islandChunkSize)));
+			Debug.LogWarning("FalloffMap mode is commented out");
 		}
 	}
 

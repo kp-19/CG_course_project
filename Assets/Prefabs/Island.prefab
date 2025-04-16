@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 860424369763543900}
   - component: {fileID: 1187964297143988602}
   - component: {fileID: 8960909617320795533}
+  - component: {fileID: 4369697460036374227}
   m_Layer: 0
   m_Name: Island
   m_TagString: Untagged
@@ -224,7 +225,7 @@ MonoBehaviour:
   persistance: 0.5
   lacunarity: 2
   seed: 0
-  offset: {x: 0.62, y: 0}
+  offset: {x: 1.3, y: 0}
   autoUpdate: 0
   regions:
   - name: Water Deep
@@ -266,3 +267,35 @@ MonoBehaviour:
   meshFilter: {fileID: 7338718753298260347}
   meshRenderer: {fileID: 7909726539786753223}
   meshCollider: {fileID: 5037807898292444840}
+  resourceSpawners:
+  - {fileID: 4369697460036374227}
+--- !u!114 &4369697460036374227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2696742988488694914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba5c12b083124c44afb07cec7a5abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourcePrefabArray:
+  - {fileID: 117604, guid: 9469bb1d3aa88ca40aa4079e96a27f8e, type: 3}
+  - {fileID: 166966, guid: 78c29697749a6d44e964f9a0cf83d77a, type: 3}
+  - {fileID: 147220, guid: 446fc4730aadcd04985c8dafaaf0c501, type: 3}
+  spawnChance: 100
+  islandGenerator: {fileID: 1187964297143988602}
+  meshScale: 10
+  meshOffsetX: 450
+  meshOffsetZ: 300
+  meshOffsetY: 100
+  distanceBetweenCheck: 2
+  heightOfCheck: 100
+  rangeOfCheck: 200
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  minNoiseHeight: 0.4
+  maxNoiseHeight: 0.48

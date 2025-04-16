@@ -24,14 +24,14 @@ public class ShipController : MonoBehaviour
     void OnEnable()
     {
         inputActions.Enable();
-        inputActions.Player.Move.performed += OnMove;
-        inputActions.Player.Move.canceled += OnMove;
+        inputActions.Player.MoveShip.performed += OnMove;
+        inputActions.Player.MoveShip.canceled += OnMove;
     }
 
     void OnDisable()
     {
-        inputActions.Player.Move.performed -= OnMove;
-        inputActions.Player.Move.canceled -= OnMove;
+        inputActions.Player.MoveShip.performed -= OnMove;
+        inputActions.Player.MoveShip.canceled -= OnMove;
         inputActions.Disable();
     }
 

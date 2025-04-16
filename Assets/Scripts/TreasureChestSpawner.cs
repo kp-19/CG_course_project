@@ -8,6 +8,7 @@ public class TreasureChestSpawner : ResourceSpawner
     public GameObject treasureChestPrefab;
     public int minChests = 2;
     public int maxChests = 4;
+    public PlayerUIController playerUIController;
 
     [Header("Height Spawning Settings")]
     [SerializeField] private float minNoiseHeight = 0.0f; // Default: Spawn anywhere
@@ -91,7 +92,7 @@ public class TreasureChestSpawner : ResourceSpawner
 
                 GameObject chest = Instantiate(treasureChestPrefab, spawnPos, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)), transform);
                 chest.transform.localScale = new Vector3(1f, 1f, 1f); // Adjust scale as needed for the chest prefab
-
+                chest.GetComponent<TreasureController>().playerUIController = playerUIController;
                 // Add necessary components if they don't exist on the prefab
                 if (chest.GetComponent<CapsuleCollider>() == null)
                 {

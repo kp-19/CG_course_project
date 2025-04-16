@@ -16,7 +16,17 @@ public class TreasureController : MonoBehaviour
         
     }
 
-    
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            if (playerUIController != null)
+            {
+                playerUIController.AddTreasure(50);
+                Destroy(gameObject);
+            }
+        }
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -24,7 +34,7 @@ public class TreasureController : MonoBehaviour
         {
             if (playerUIController != null)
             {
-                playerUIController.treasure += 50;
+                playerUIController.AddTreasure(50);
                 Destroy(gameObject);
             }
         }

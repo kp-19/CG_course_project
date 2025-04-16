@@ -97,7 +97,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -361,5 +361,6 @@ MonoBehaviour:
   treasureChestPrefab: {fileID: 5283313697113663848, guid: 383c7e385eb6f2f4bac2ef32ea259337, type: 3}
   minChests: 6
   maxChests: 10
+  playerUIController: {fileID: 0}
   minNoiseHeight: 0
   maxNoiseHeight: 0.5

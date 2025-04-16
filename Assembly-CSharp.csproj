@@ -81,10 +81,12 @@
     <Compile Include="Assets\Imports\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
     <Compile Include="Assets\Scripts\TextureGenerator.cs" />
     <Compile Include="Assets\Scripts\TreasureChestSpawner.cs" />
+    <Compile Include="Assets\Scripts\PlayerUIController.cs" />
     <Compile Include="Assets\Scripts\IslandDisplay.cs" />
     <Compile Include="Assets\Imports\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\Scripts\MeshRenderer.cs" />
     <Compile Include="Assets\Scripts\ResourceSpawner.cs" />
+    <Compile Include="Assets\Scripts\TreasureController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imports\Axe Warrior\ReadMe.txt" />

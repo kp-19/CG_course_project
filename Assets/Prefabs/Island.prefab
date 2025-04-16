@@ -349,9 +349,9 @@ MonoBehaviour:
   spawnChance: 10
   islandGenerator: {fileID: 1187964297143988602}
   meshScale: 10
-  meshOffsetX: 0
-  meshOffsetZ: 0
-  meshOffsetY: 0
+  meshOffsetX: 450
+  meshOffsetZ: 300
+  meshOffsetY: 100
   distanceBetweenCheck: 5
   heightOfCheck: 100
   rangeOfCheck: 200
@@ -359,5 +359,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   treasureChestPrefab: {fileID: 5283313697113663848, guid: 383c7e385eb6f2f4bac2ef32ea259337, type: 3}
-  minChests: 2
-  maxChests: 4
+  minChests: 6
+  maxChests: 10
+  minNoiseHeight: 0
+  maxNoiseHeight: 0.5

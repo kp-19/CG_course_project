@@ -172,6 +172,24 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
+      time: 0.40200678
+      value: -0.0022834986
+      inSlope: 0.053367414
+      outSlope: 0.053367414
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.16015391
+    - serializedVersion: 3
+      time: 0.8733758
+      value: 0.8090423
+      inSlope: 5.2402225
+      outSlope: 5.2402225
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.14006248
+    - serializedVersion: 3
       time: 1
       value: 1
       inSlope: 2
@@ -188,8 +206,8 @@ MonoBehaviour:
   persistance: 0.5
   lacunarity: 2
   seed: 0
-  offset: {x: 0, y: 0}
-  autoUpdate: 1
+  offset: {x: 0.8, y: 0}
+  autoUpdate: 0
   regions:
   - name: Water Deep
     height: 0.3

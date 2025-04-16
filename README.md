@@ -5,7 +5,7 @@ A 3D exploration and survival game built using Unity where players navigate an o
 ## 🎮 Demo & Repository
 
 - 📹 [Watch Demo Video](https://youtu.be/sampledemo123)  
-- 💻 [GitHub Repository](https://github.com/teamOceanExplorers/OceanIslandGame)
+- 💻 [GitHub Repository](https://github.com/kp-19/CG_course_project)
 
 ---
 

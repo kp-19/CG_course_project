@@ -82,6 +82,7 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Imports\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
     <Compile Include="Assets\Scripts\TextureGenerator.cs" />
+    <Compile Include="Assets\Scripts\VikingMale.cs" />
     <Compile Include="Assets\Scripts\TreasureChestSpawner.cs" />
     <Compile Include="Assets\Scripts\PlayerUIController.cs" />
     <Compile Include="Assets\Scripts\IslandDisplay.cs" />

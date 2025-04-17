@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\BuoyancyObject.cs" />
     <Compile Include="Assets\Scripts\QuitGame.cs" />
     <Compile Include="Assets\Imports\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
+    <Compile Include="Assets\Scripts\OffsetChanger.cs" />
     <Compile Include="Assets\Scripts\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\ShipIslandCollisionHandler.cs" />
     <Compile Include="Assets\Scripts\MountingMechanics.cs" />

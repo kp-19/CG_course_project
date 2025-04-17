@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quit button clicked - Application would quit in build");
+        //Debug.Log("Quit button clicked - Application would quit in build");
         Application.Quit();
     }
 }

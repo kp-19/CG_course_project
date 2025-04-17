@@ -13,7 +13,7 @@ public class ShipIslandCollisionHandler : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Island") && !isBouncing)
         {
-            Debug.Log("Ship collided with an island. Bouncing back!");
+            //Debug.Log("Ship collided with an island. Bouncing back!");
 
             isBouncing = true;
 

@@ -20,14 +20,14 @@ public class TreasureChestSpawner : ResourceSpawner
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Debug.Log(gameObject.name + ": TreasureChestSpawner Start - Using noise height range: " + minNoiseHeight + " to " + maxNoiseHeight);
+        ////Debug.Log(gameObject.name + ": TreasureChestSpawner Start - Using noise height range: " + minNoiseHeight + " to " + maxNoiseHeight);
 
         // Get the heightMultiplier and heightCurve from the IslandGenerator
         if (islandGenerator != null)
         {
             heightMultiplier = islandGenerator.heightMultiplier;
             heightCurve = islandGenerator.heightCurve;
-            //Debug.Log(gameObject.name + ": Using heightMultiplier: " + heightMultiplier + " and mesh scale: " + meshScale);
+            ////Debug.Log(gameObject.name + ": Using heightMultiplier: " + heightMultiplier + " and mesh scale: " + meshScale);
         }
         else
         {
@@ -41,7 +41,7 @@ public class TreasureChestSpawner : ResourceSpawner
     // Override the base method to spawn treasure chests
     public override void SetupAndSpawnResources(MeshData meshData)
     {
-        //Debug.Log(gameObject.name + ": SetupAndSpawnResources called for Treasure Chests");
+        ////Debug.Log(gameObject.name + ": SetupAndSpawnResources called for Treasure Chests");
         DeleteResources(); // Reuse the DeleteResources method from the base class
 
         if (treasureChestPrefab == null)
@@ -62,7 +62,7 @@ public class TreasureChestSpawner : ResourceSpawner
         int attempts = 0;
         int maxAttempts = numberOfChestsToSpawn * 10; // Limit attempts to avoid infinite loops
 
-        //Debug.Log(gameObject.name + ": Attempting to spawn " + numberOfChestsToSpawn + " treasure chests.");
+        ////Debug.Log(gameObject.name + ": Attempting to spawn " + numberOfChestsToSpawn + " treasure chests.");
 
         while (chestsSpawned < numberOfChestsToSpawn && attempts < maxAttempts)
         {
@@ -88,7 +88,7 @@ public class TreasureChestSpawner : ResourceSpawner
                     (vertex.y * meshScale) + meshOffsetY + 0.5f, // Add a small offset to prevent clipping
                     (vertex.z + offsetZ) * meshScale + meshOffsetZ
                 );
-                Debug.Log(gameObject.name + ": Spawning chest at " + spawnPos);
+                //Debug.Log(gameObject.name + ": Spawning chest at " + spawnPos);
 
                 GameObject chest = Instantiate(treasureChestPrefab, spawnPos, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)), transform);
                 chest.transform.localScale = new Vector3(1f, 1f, 1f); // Adjust scale as needed for the chest prefab
@@ -118,7 +118,7 @@ public class TreasureChestSpawner : ResourceSpawner
         if (chestsSpawned < numberOfChestsToSpawn) {
             Debug.LogWarning(gameObject.name + ": Could only spawn " + chestsSpawned + " out of " + numberOfChestsToSpawn + " requested chests after " + attempts + " attempts.");
         } else {
-             //Debug.Log(gameObject.name + ": Successfully spawned " + chestsSpawned + " treasure chests.");
+             ////Debug.Log(gameObject.name + ": Successfully spawned " + chestsSpawned + " treasure chests.");
         }
     }
 
@@ -176,7 +176,7 @@ public class TreasureChestSpawner : ResourceSpawner
         // Optional: Add logging for debugging
         // if (Random.Range(0, 100) < 5)
         // {
-        //     //Debug.Log(gameObject.name + ": Mesh height: " + meshHeight +
+        //     ////Debug.Log(gameObject.name + ": Mesh height: " + meshHeight +
         //               " → Unscaled: " + (meshHeight / meshScale) +
         //               " → Approx noise height: " + approximateNoiseHeight +
         //               " → In range [" + minNoiseHeight + "-" + maxNoiseHeight + "]: " + shouldSpawn);

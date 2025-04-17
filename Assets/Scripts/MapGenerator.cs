@@ -30,7 +30,7 @@ public class MapGenerator : MonoBehaviour
         {
             seed = Random.Range(0, 999999);
         }
-        //Debug.Log("Map Seed: " + seed);
+        ////Debug.Log("Map Seed: " + seed);
         prng = new System.Random(seed);
         
         // Clear existing islands if any

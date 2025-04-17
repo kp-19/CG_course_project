@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerUIController : MonoBehaviour
 {
     public int health;
@@ -19,7 +19,10 @@ public class PlayerUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
     
     public void UpdateUI()

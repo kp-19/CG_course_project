@@ -1,4 +1,4 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -163,9 +163,20 @@ namespace StarterAssets
             // Attack handling
             if (_input.attack)
             {
-                Debug.Log("ATTACK!");
-                // TODO: Play attack animation, do damage, whatever you want
-                _input.attack = false; // Important: Reset it after processing
+                // Find enemies in attack range (explicitly ignore triggers)
+                Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+                foreach (var hitCollider in hitColliders)
+                {
+                    // Check if the hit object has the VikingMale component (enemy)
+                    VikingMale enemy = hitCollider.GetComponent<VikingMale>();
+                    if (enemy != null)
+                    {
+                        // Apply damage to the enemy
+                        enemy.TakeDamage(50);
+                    }
+                }
+                
+                _input.attack = false; // Reset it after processing
             }
         }
 

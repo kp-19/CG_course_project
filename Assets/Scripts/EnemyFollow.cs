@@ -5,12 +5,14 @@ public class EnemyFollow : MonoBehaviour
 {
     public Transform player;
     private NavMeshAgent agent;
+    private Animator animator;
 
     private float detectionRadius = 30f;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -24,8 +26,11 @@ public class EnemyFollow : MonoBehaviour
                 if (agent.isOnNavMesh)
                 {
                     agent.SetDestination(player.position);
+                    if (animator != null && animator.GetBool("attack") == false)
+                    {
+                        animator.SetBool("run", true);
+                    }
                 } else{
-                    Debug.LogWarning("Agent not on NavMesh!");
                     gameObject.SetActive(false);
                     gameObject.SetActive(true);
                 }
@@ -34,6 +39,10 @@ public class EnemyFollow : MonoBehaviour
             {
                 if (agent.isOnNavMesh)
                 {
+                    if (animator != null)
+                    {
+                        animator.SetBool("run", false);
+                    }
                     agent.ResetPath();
                 }
             }

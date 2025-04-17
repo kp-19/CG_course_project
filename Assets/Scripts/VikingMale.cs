@@ -30,9 +30,10 @@ public class VikingMale : MonoBehaviour
         {
             if (animator != null)
             {
+                animator.SetBool("run", false);
                 animator.SetBool("attack", true);
             }
-            TakeDamage(10);
+            //TakeDamage(10);
         }
     }
     

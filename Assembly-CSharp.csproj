@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\healthBar.cs" />
     <Compile Include="Assets\Imports\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\FallOffGenerator.cs" />
+    <Compile Include="Assets\Scripts\EnemyFollow.cs" />
     <Compile Include="Assets\Imports\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
     <Compile Include="Assets\Imports\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\InputSystem_Actions.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\TreasureChestSpawner.cs" />
     <Compile Include="Assets\Scripts\PlayerUIController.cs" />
     <Compile Include="Assets\Scripts\IslandDisplay.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Imports\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\Scripts\MeshRenderer.cs" />
     <Compile Include="Assets\Scripts\ResourceSpawner.cs" />

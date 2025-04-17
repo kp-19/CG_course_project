@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1905459450802159171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8798917326449757906}
+  - component: {fileID: 368444470351153037}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8798917326449757906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905459450802159171}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 860424369763543900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &368444470351153037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905459450802159171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e77526cf24f1749a1dc79fe70fb215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourcePrefabArray: []
+  spawnChance: 10
+  islandGenerator: {fileID: 1187964297143988602}
+  meshScale: 10
+  meshOffsetX: 450
+  meshOffsetZ: 300
+  meshOffsetY: 100
+  distanceBetweenCheck: 5
+  heightOfCheck: 100
+  rangeOfCheck: 200
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyPrefab: {fileID: 0}
+  minEnemies: 10
+  maxEnemies: 20
+  minNoiseHeight: 0.3
+  maxNoiseHeight: 0.9
 --- !u!1 &2287725840847460068
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +74,7 @@ GameObject:
   - component: {fileID: 7338718753298260347}
   - component: {fileID: 7909726539786753223}
   - component: {fileID: 5037807898292444840}
+  - component: {fileID: 613087593714474268}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -109,6 +172,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &613087593714474268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287725840847460068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: f7da518f1f13444488d04213c1717d83, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &2696742988488694914
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +238,7 @@ Transform:
   m_Children:
   - {fileID: 2816105261059605578}
   - {fileID: 2372501176359832993}
+  - {fileID: 8798917326449757906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1187964297143988602

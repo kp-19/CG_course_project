@@ -128,7 +128,7 @@ public class ResourceSpawner : MonoBehaviour
     {
         foreach(Transform child in transform)
         {
-            if (child.gameObject.name != "Mesh" && child.gameObject.name != "TreasureSpawner")
+            if (child.gameObject.name != "Mesh" && child.gameObject.name != "TreasureSpawner" && child.gameObject.name != "EnemySpawner")
             {
                 Destroy(child.gameObject);
             }

@@ -367,6 +367,7 @@ MonoBehaviour:
   resourceSpawners:
   - {fileID: 4369697460036374227}
   - {fileID: 3152006009694818807}
+  - {fileID: 368444470351153037}
 --- !u!114 &4369697460036374227
 MonoBehaviour:
   m_ObjectHideFlags: 0

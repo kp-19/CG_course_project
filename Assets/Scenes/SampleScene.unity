@@ -590,13 +590,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1706019847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a9ccc7c69a68d46b186b64b039d438, type: 3}
+  m_Script: {fileID: 11500000, guid: a4d4cc0f7950cf2449b779bc8c7d5e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  islandPrefab: {fileID: 2696742988488694914, guid: 3ba0c9a13165eb9478a49a8a0d363d14, type: 3}
+  islandPrefab: {fileID: 2696742988488694914, guid: c3560444f2ef60e4f87647a173114096, type: 3}
   islandCount: 5
   minSpacingBetweenIslands: 1500
-  maxSpacingBetweenIslands: 3000
+  maxSpacingBetweenIslands: 200
   mapRadius: 10000
   seed: 0
   useRandomSeed: 1

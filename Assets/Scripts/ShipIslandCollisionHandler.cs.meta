@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 261eb8d1a5f867a48920e04364de371f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - islandPrefab: {fileID: 2696742988488694914, guid: c3560444f2ef60e4f87647a173114096, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

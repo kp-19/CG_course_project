@@ -14,6 +14,15 @@ public class ShipController : MonoBehaviour
     private Vector2 moveInput;
     private float currentSpeed = 0f;
     private bool accelerating = false;
+    private bool movementBlocked = false;
+
+    public void BlockMovement(bool state)
+    {
+        movementBlocked = state;
+        if (state)
+            currentSpeed = 0f; // stop movement immediately
+    }
+
 
     void Awake()
     {
@@ -24,14 +33,14 @@ public class ShipController : MonoBehaviour
     void OnEnable()
     {
         inputActions.Enable();
-        inputActions.Player.Move.performed += OnMove;
-        inputActions.Player.Move.canceled += OnMove;
+        inputActions.Player.MoveShip.performed += OnMove;
+        inputActions.Player.MoveShip.canceled += OnMove;
     }
 
     void OnDisable()
     {
-        inputActions.Player.Move.performed -= OnMove;
-        inputActions.Player.Move.canceled -= OnMove;
+        inputActions.Player.MoveShip.performed -= OnMove;
+        inputActions.Player.MoveShip.canceled -= OnMove;
         inputActions.Disable();
     }
 
@@ -57,6 +66,7 @@ public class ShipController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (movementBlocked) return;
         // --- Steering ---
         float turn = moveInput.x * turnSpeed * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation * Quaternion.Euler(0f, turn, 0f));

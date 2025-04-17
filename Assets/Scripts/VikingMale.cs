@@ -68,6 +68,14 @@ public class VikingMale : MonoBehaviour
         {
             animator.SetBool("died", true);
         }
+
+        // Disable the EnemyFollow component when dead
+        EnemyFollow enemyFollow = GetComponent<EnemyFollow>();
+        if (enemyFollow != null)
+        {
+            enemyFollow.enabled = false;
+        }
+        
         Invoke("DestroySelf", 10f);
     }
 

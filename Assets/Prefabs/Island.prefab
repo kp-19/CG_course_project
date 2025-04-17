@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourcePrefabArray: []
-  spawnChance: 10
+  spawnChance: 79.7
   islandGenerator: {fileID: 1187964297143988602}
   meshScale: 10
   meshOffsetX: 450
@@ -58,8 +58,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   enemyPrefab: {fileID: 0}
-  minEnemies: 10
-  maxEnemies: 20
+  minEnemies: 20
+  maxEnemies: 30
   minNoiseHeight: 0.3
   maxNoiseHeight: 0.9
 --- !u!1 &2287725840847460068

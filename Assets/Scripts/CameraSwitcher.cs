@@ -5,6 +5,10 @@ public class CameraSwitcher : MonoBehaviour
 {
     public Camera playerCamera;
     public Camera shipCamera;
+    public Transform playerTransform;
+    public Transform shipTransform;
+    public float switchDistanceThreshold = 3f;  // Must be close to switch
+
     public InputAction switchCameraAction;
     public InputSystem_Actions inputActions;
 
@@ -13,6 +17,7 @@ public class CameraSwitcher : MonoBehaviour
         inputActions = new InputSystem_Actions();
         switchCameraAction = inputActions.Player.SwitchCamera;
     }
+
     private void OnEnable()
     {
         switchCameraAction.Enable();
@@ -27,18 +32,27 @@ public class CameraSwitcher : MonoBehaviour
 
     void Start()
     {
-        ActivatePlayerCamera(); // Default to player cam at start
+        ActivatePlayerCamera(); // Start with player camera
     }
 
     void SwitchCamera()
     {
-        if (playerCamera.enabled)
+        float distance = Vector3.Distance(playerTransform.position, shipTransform.position);
+
+        if (distance <= switchDistanceThreshold)
         {
-            ActivateShipCamera();
+            if (playerCamera.enabled)
+            {
+                ActivateShipCamera();
+            }
+            else
+            {
+                ActivatePlayerCamera();
+            }
         }
         else
         {
-            ActivatePlayerCamera();
+            Debug.Log("Too far from the ship to switch camera!");
         }
     }
 

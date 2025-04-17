@@ -159,6 +159,14 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+
+            // Attack handling
+            if (_input.attack)
+            {
+                Debug.Log("ATTACK!");
+                // TODO: Play attack animation, do damage, whatever you want
+                _input.attack = false; // Important: Reset it after processing
+            }
         }
 
         private void LateUpdate()

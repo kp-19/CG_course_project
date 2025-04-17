@@ -5,6 +5,9 @@ public class VikingMale : MonoBehaviour
     private Animator animator;
     public int hp = 100;
     private bool isDead = false;
+    private Transform playerTransform;
+    private float lastAttackTime = 0f;
+    private float attackCooldown = 1.01f; // Adjust based on your animation length
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,6 +18,13 @@ public class VikingMale : MonoBehaviour
         if (animator == null)
         {
             Debug.LogWarning("Animator not found in children of " + gameObject.name);
+        }
+        
+        // Find the player object
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            playerTransform = playerObject.transform;
         }
     }
 
@@ -32,8 +42,14 @@ public class VikingMale : MonoBehaviour
             {
                 animator.SetBool("run", false);
                 animator.SetBool("attack", true);
+                
+                // Check if enough time has passed since last attack
+                if (Time.time >= lastAttackTime + attackCooldown)
+                {
+                    DamagePlayer();
+                    lastAttackTime = Time.time;
+                }
             }
-            //TakeDamage(10);
         }
     }
     
@@ -44,6 +60,23 @@ public class VikingMale : MonoBehaviour
             if (animator != null)
             {
                 animator.SetBool("attack", false);
+            }
+        }
+    }
+
+    // Called by animation event or on a timer
+    public void DamagePlayer()
+    {
+        if (isDead) return;
+        
+        // Find player and deal damage
+        if (playerTransform != null)
+        {
+            PlayerUIController playerUI = playerTransform.GetComponent<PlayerUIController>();
+            if (playerUI != null)
+            {
+                // Deal 10 damage to player
+                playerUI.SetHealth(playerUI.health - 10);
             }
         }
     }

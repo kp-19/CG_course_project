@@ -50,7 +50,7 @@ MonoBehaviour:
   meshScale: 10
   meshOffsetX: 450
   meshOffsetZ: 300
-  meshOffsetY: 100
+  meshOffsetY: 50
   distanceBetweenCheck: 5
   heightOfCheck: 100
   rangeOfCheck: 200
@@ -128,7 +128,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 316a412773ae05948ac9e0af7dd69778, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   meshScale: 10
   meshOffsetX: 450
   meshOffsetZ: 300
-  meshOffsetY: 100
+  meshOffsetY: 50
   distanceBetweenCheck: 2
   heightOfCheck: 100
   rangeOfCheck: 200
@@ -448,7 +448,7 @@ MonoBehaviour:
   meshScale: 10
   meshOffsetX: 450
   meshOffsetZ: 300
-  meshOffsetY: 100
+  meshOffsetY: 50
   distanceBetweenCheck: 5
   heightOfCheck: 100
   rangeOfCheck: 200
